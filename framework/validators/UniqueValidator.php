@@ -24,6 +24,7 @@ use yii\db\ActiveRecordInterface;
  * // a1 needs to be unique, but column a2 will be used to check the uniqueness of the a1 value
  * ['a1', 'unique', 'targetAttribute' => 'a2']
  * // a1 and a2 need to be unique together, and they both will receive error message
+ * // :TRICKY If you specify multiple fields to validate, requests to verify the uniqueness will be duplicated as many times as fields you specified
  * [['a1', 'a2'], 'unique', 'targetAttribute' => ['a1', 'a2']]
  * // a1 and a2 need to be unique together, only a1 will receive error message
  * ['a1', 'unique', 'targetAttribute' => ['a1', 'a2']]
